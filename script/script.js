@@ -127,7 +127,6 @@ calculatorDisplay.textContent = '';
 
 // to get the operator
 buttonPlus.addEventListener('click', () => {
-    operator = '+';
     calculatorDisplay.textContent += ' + ';
     if (!num1) {
         num1 = Number(num);
@@ -137,9 +136,9 @@ buttonPlus.addEventListener('click', () => {
         num = '';
     }
     operate();
+    operator = '+';
 })
 buttonMin.addEventListener('click', () => {
-    operator = '-';
     calculatorDisplay.textContent += ' - ';
     if (!num1) {
         num1 = Number(num);
@@ -149,9 +148,9 @@ buttonMin.addEventListener('click', () => {
         num = '';
     }
     operate();
+    operator = '-';
 })
 buttonMulti.addEventListener('click', () => {
-    operator = '*';
     calculatorDisplay.textContent += ' * ';
     if (!num1) {
         num1 = Number(num);
@@ -161,9 +160,9 @@ buttonMulti.addEventListener('click', () => {
         num = '';
     }
     operate();
+    operator = '*';
 })
 buttonDiv.addEventListener('click', () => {
-    operator = '/';
     calculatorDisplay.textContent += ' / ';
     if (!num1) {
         num1 = Number(num);
@@ -173,6 +172,7 @@ buttonDiv.addEventListener('click', () => {
         num = '';
     }
     operate();
+    operator = '/';
 })
 buttonEqal.addEventListener('click', () => {
     if (!num1) {
