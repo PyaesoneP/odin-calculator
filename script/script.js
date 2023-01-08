@@ -70,86 +70,140 @@ let num1 = 0;
 let num2 = 0;
 let operator = '';
 let answer;
+calculatorDisplay.textContent = '';
 
 // to get the num value
 let num = '';
 button0.addEventListener('click', () => {
     num += button0.textContent;
+    // to display on calculator etc.
+    calculatorDisplay.textContent += button0.textContent;
 })
 button1.addEventListener('click', () => {
     num += button1.textContent;
+    calculatorDisplay.textContent += button1.textContent;
 })
 button2.addEventListener('click', () => {
     num += button2.textContent;
+    calculatorDisplay.textContent += button2.textContent;
 })
 button3.addEventListener('click', () => {
     num += button3.textContent;
+    calculatorDisplay.textContent += button3.textContent;
 })
 button4.addEventListener('click', () => {
     num += button4.textContent;
+    calculatorDisplay.textContent += button4.textContent;
 })
 button5.addEventListener('click', () => {
     num += button5.textContent;
+    calculatorDisplay.textContent += button5.textContent;
 })
 button6.addEventListener('click', () => {
     num += button6.textContent;
+    calculatorDisplay.textContent += button6.textContent;
 })
 button7.addEventListener('click', () => {
     num += button7.textContent;
+    calculatorDisplay.textContent += button7.textContent;
 })
 button8.addEventListener('click', () => {
     num += button8.textContent;
+    calculatorDisplay.textContent += button8.textContent;
 })
 button9.addEventListener('click', () => {
     num += button9.textContent;
+    calculatorDisplay.textContent += button9.textContent;
 })
 
 // to reset everything 
 buttonAC.addEventListener('click', () => {
-    num = '';
+num1 = 0;
+num2 = 0;
+operator = '';
+answer;
+calculatorDisplay.textContent = '';
 })
 
 // to get the operator
 buttonPlus.addEventListener('click', () => {
-    num1 = Number(num);
     operator = '+';
-    num = '';
-    button0.addEventListener('click', () => {
-        num += button0.textContent;
-    })
-    button1.addEventListener('click', () => {
-        num += button1.textContent;
-    })
-    button2.addEventListener('click', () => {
-        num += button2.textContent;
-    })
-    button3.addEventListener('click', () => {
-        num += button3.textContent;
-    })
-    button4.addEventListener('click', () => {
-        num += button4.textContent;
-    })
-    button5.addEventListener('click', () => {
-        num += button5.textContent;
-    })
-    button6.addEventListener('click', () => {
-        num += button6.textContent;
-    })
-    button7.addEventListener('click', () => {
-        num += button7.textContent;
-    })
-    button8.addEventListener('click', () => {
-        num += button8.textContent;
-    })
-    button9.addEventListener('click', () => {
-        num += button9.textContent;
-    })
+    calculatorDisplay.textContent += ' + ';
+    if (!num1) {
+        num1 = Number(num);
+        num = '';
+    } else {
+        num2 = Number(num);
+        num = '';
+    }
+    operate();
+})
+buttonMin.addEventListener('click', () => {
+    operator = '-';
+    calculatorDisplay.textContent += ' - ';
+    if (!num1) {
+        num1 = Number(num);
+        num = '';
+    } else {
+        num2 = Number(num);
+        num = '';
+    }
+    operate();
+})
+buttonMulti.addEventListener('click', () => {
+    operator = '*';
+    calculatorDisplay.textContent += ' * ';
+    if (!num1) {
+        num1 = Number(num);
+        num = '';
+    } else {
+        num2 = Number(num);
+        num = '';
+    }
+    operate();
+})
+buttonDiv.addEventListener('click', () => {
+    operator = '/';
+    calculatorDisplay.textContent += ' / ';
+    if (!num1) {
+        num1 = Number(num);
+        num = '';
+    } else {
+        num2 = Number(num);
+        num = '';
+    }
+    operate();
+})
+buttonEqal.addEventListener('click', () => {
+    if (!num1) {
+        num1 = Number(num);
+        num = '';
+    } else {
+        num2 = Number(num);
+        num = '';
+    }
+    operate();
+    calculatorDisplay.textContent = num1;
 })
 
 // to operate
-buttonEqal.addEventListener('click', () => {
-    num2 = Number(num);
-    if (operator === '+') {
-        answer = num1 + num2;
+function operate () {
+    if (num1 && num2 && operator) {
+        if (operator === '+') {
+            answer = num1 + num2;
+            num1 = answer;
+        }
+        if (operator === '-') {
+            answer = num1 - num2;
+            num1 = answer;
+        }
+        if (operator === '*') {
+            answer = num1 * num2;
+            num1 = answer;
+        }
+        if (operator === '/') {
+            answer = num1 / num2;
+            num1 = answer;
+        }
     }
-})
+}
