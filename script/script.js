@@ -2,7 +2,7 @@ const calculatorFrame = document.querySelector('.calculatorframe');
 const calculatorDisplay = document.querySelector('.display');
 const calculatorBody = document.querySelector('.numbersandops');
 
-// add buttons to the calculator - start
+// add buttons to the calculator
 function addButtons () {
 
     for (let i = 0; i < 5; i++) {
@@ -64,3 +64,92 @@ function addButtonText () {
 }
 
 addButtonText();
+
+// to set initial values
+let num1 = 0;
+let num2 = 0;
+let operator = '';
+let answer;
+
+// to get the num value
+let num = '';
+button0.addEventListener('click', () => {
+    num += button0.textContent;
+})
+button1.addEventListener('click', () => {
+    num += button1.textContent;
+})
+button2.addEventListener('click', () => {
+    num += button2.textContent;
+})
+button3.addEventListener('click', () => {
+    num += button3.textContent;
+})
+button4.addEventListener('click', () => {
+    num += button4.textContent;
+})
+button5.addEventListener('click', () => {
+    num += button5.textContent;
+})
+button6.addEventListener('click', () => {
+    num += button6.textContent;
+})
+button7.addEventListener('click', () => {
+    num += button7.textContent;
+})
+button8.addEventListener('click', () => {
+    num += button8.textContent;
+})
+button9.addEventListener('click', () => {
+    num += button9.textContent;
+})
+
+// to reset everything 
+buttonAC.addEventListener('click', () => {
+    num = '';
+})
+
+// to get the operator
+buttonPlus.addEventListener('click', () => {
+    num1 = Number(num);
+    operator = '+';
+    num = '';
+    button0.addEventListener('click', () => {
+        num += button0.textContent;
+    })
+    button1.addEventListener('click', () => {
+        num += button1.textContent;
+    })
+    button2.addEventListener('click', () => {
+        num += button2.textContent;
+    })
+    button3.addEventListener('click', () => {
+        num += button3.textContent;
+    })
+    button4.addEventListener('click', () => {
+        num += button4.textContent;
+    })
+    button5.addEventListener('click', () => {
+        num += button5.textContent;
+    })
+    button6.addEventListener('click', () => {
+        num += button6.textContent;
+    })
+    button7.addEventListener('click', () => {
+        num += button7.textContent;
+    })
+    button8.addEventListener('click', () => {
+        num += button8.textContent;
+    })
+    button9.addEventListener('click', () => {
+        num += button9.textContent;
+    })
+})
+
+// to operate
+buttonEqal.addEventListener('click', () => {
+    num2 = Number(num);
+    if (operator === '+') {
+        answer = num1 + num2;
+    }
+})
