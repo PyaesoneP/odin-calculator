@@ -115,6 +115,10 @@ button9.addEventListener('click', () => {
     num += button9.textContent;
     calculatorDisplay.textContent += button9.textContent;
 })
+buttonDeci.addEventListener('click', () => {
+    num += buttonDeci.textContent;
+    calculatorDisplay.textContent += buttonDeci.textContent;
+})
 
 // to reset everything 
 buttonAC.addEventListener('click', () => {
@@ -125,9 +129,34 @@ answer;
 calculatorDisplay.textContent = '';
 })
 
+// to delete characters
+buttonDel.addEventListener('click', () => {
+    // to turn the string to an array so we can take the last ones out
+    let numAndOpsArr = calculatorDisplay.textContent.split('');
+    let lastValue = numAndOpsArr[numAndOpsArr.length - 1];
+    let secondLastValue = numAndOpsArr[numAndOpsArr.length - 2];
+    if (secondLastValue === '+' || secondLastValue === '-' || secondLastValue === '*' || secondLastValue === '/') {
+        // to take the last three indices because we used ' + '. there are two spaces around the operator
+        numAndOpsArr.pop();
+        numAndOpsArr.pop();
+        numAndOpsArr.pop();
+        // to delete the operator and num2
+        num2 = 0;
+        operator = '';
+        // to rejoin the array elements into the string
+        calculatorDisplay.textContent = numAndOpsArr.join('');
+        num = calculatorDisplay.textContent;
+    } else {
+        numAndOpsArr.pop();
+        calculatorDisplay.textContent = numAndOpsArr.join('');
+        num = calculatorDisplay.textContent;
+    }
+})
+
 // to get the operator
 buttonPlus.addEventListener('click', () => {
     calculatorDisplay.textContent += ' + ';
+    // to covert the num string to num1 and num2
     if (!num1) {
         num1 = Number(num);
         num = '';
@@ -184,6 +213,18 @@ buttonEqal.addEventListener('click', () => {
     }
     operate();
     calculatorDisplay.textContent = num1;
+})
+buttonPercent.addEventListener('click', () => {
+    calculatorDisplay.textContent += '%';
+    if (!num1) {
+        num1 = Number(num);
+        num = '';
+    } else {
+        num2 = Number(num);
+        num = '';
+    }
+    num1 /= 100;
+    operate();
 })
 
 // to operate

@@ -17,14 +17,13 @@ body {
     flex-direction: column;
     width: 400px;
     height: 600px;
-    background-color: white;
 }
 
 .display {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(210, 210, 210);
+    background-color: white;
     flex: 1;
     border: 1px solid black;
 }
@@ -32,7 +31,7 @@ body {
 .numbersandops {
     display: flex;
     flex-direction: column;
-    background-color: rgb(210, 210, 210);
+    background-color: white;
     flex: 3;
     border: 1px solid black;
 }
