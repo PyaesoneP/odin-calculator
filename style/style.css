@@ -3,13 +3,48 @@ html, body {
 }
 
 body {
-    background-color: rgb(255, 172, 252);
+    background-color: rgb(255, 164, 206);
+    font-family: 'Roboto', sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 50px;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(148, 255, 186);
+}
+
+.logo {
+    margin-right: auto;
+    font-weight: bolder;
+    font-size: 24px;
+}
+
+.aboutlink {
+    font-size: 18px;
 }
 
 .calculator {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 100px;
 }
 
 .calculatorframe {
@@ -46,4 +81,70 @@ body {
     flex: 1;
     justify-content: center;
     align-items: center;
+}
+
+.about {
+    display: flex;
+    margin-top: 100px;
+    padding-right: 50px;
+    padding-left: 50px;
+    gap: 50px;
+    height: 500px;
+}
+
+.abouttext {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    color: white;
+}
+
+.aboutheader {
+    font-size: 36px;
+    font-weight: bolder;
+}
+
+.symbols {
+    flex-direction: column;
+    flex: 1;
+    display: flex;
+    color: rgb(255, 119, 0);
+    font-size: 48px;
+    font-weight: bolder;
+}
+
+.toprow {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.midrow {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.botrow {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+footer {
+    background-color: rgb(65, 65, 65);
+    color: #e5e7eb;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+footer > p {
+    font-size: 10px;
+    font-weight: lighter;
 }
