@@ -1,10 +1,8 @@
-html, body {
-    height: 100vh;
-}
 
 body {
     background-color: rgb(255, 164, 206);
     font-family: 'Roboto', sans-serif;
+    height: 100vh;
 }
 
 nav {
@@ -50,8 +48,8 @@ a {
 .calculatorframe {
     display: flex;
     flex-direction: column;
-    width: 400px;
-    height: 600px;
+    width: 480px;
+    height: 720px;
 }
 
 .display {
@@ -60,7 +58,10 @@ a {
     align-items: center;
     background-color: white;
     flex: 1;
-    border: 1px solid black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 36px;
+    color: rgb(255, 164, 206);
 }
 
 .numbersandops {
@@ -68,7 +69,8 @@ a {
     flex-direction: column;
     background-color: white;
     flex: 3;
-    border: 1px solid black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .numbersandops > div {
@@ -81,6 +83,7 @@ a {
     flex: 1;
     justify-content: center;
     align-items: center;
+    font-size: 18px;
 }
 
 .about {
@@ -136,9 +139,6 @@ footer {
     background-color: rgb(65, 65, 65);
     color: #e5e7eb;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-top: 100px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -147,4 +147,19 @@ footer {
 footer > p {
     font-size: 10px;
     font-weight: lighter;
+}
+
+/* style the calculator */
+.button00, .button01 {
+    background-color: rgb(255, 100, 100);
+    color: white;
+}
+
+.button02, .button03, .button13, .button23, .button33 {
+    background-color: rgb(255, 119, 0);
+    color: white;
+}
+
+.button43 {
+    background-color: rgb(148, 255, 186);
 }

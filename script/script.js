@@ -38,7 +38,7 @@ const button3 = document.querySelector('.button32');
 const buttonPlus = document.querySelector('.button33');
 const button0 = document.querySelector('.button40');
 const buttonDeci = document.querySelector('.button41');
-const buttonEqal = document.querySelector('.button42');
+const buttonEqal = document.querySelector('.button43');
 
 function addButtonText () {
     buttonAC.textContent = 'AC';
@@ -60,7 +60,6 @@ function addButtonText () {
     button0.textContent = '0';
     buttonDeci.textContent = '.';
     buttonEqal.textContent = '=';
-    document.querySelector('.button43').textContent = '';
 }
 
 addButtonText();
@@ -116,8 +115,13 @@ button9.addEventListener('click', () => {
     calculatorDisplay.textContent += button9.textContent;
 })
 buttonDeci.addEventListener('click', () => {
-    num += buttonDeci.textContent;
-    calculatorDisplay.textContent += buttonDeci.textContent;
+    // to have only one decimal
+    if (num.includes('.')) {
+        return;
+    } else {
+        num += buttonDeci.textContent;
+        calculatorDisplay.textContent += buttonDeci.textContent; 
+    }
 })
 
 // to reset everything 
@@ -155,6 +159,10 @@ buttonDel.addEventListener('click', () => {
 
 // to get the operator
 buttonPlus.addEventListener('click', () => {
+    // to prevent from entering operators without numbers
+    if (!num) {
+        return;
+    }
     calculatorDisplay.textContent += ' + ';
     // to covert the num string to num1 and num2
     if (!num1) {
@@ -168,6 +176,9 @@ buttonPlus.addEventListener('click', () => {
     operator = '+';
 })
 buttonMin.addEventListener('click', () => {
+    if (!num) {
+        return;
+    }
     calculatorDisplay.textContent += ' - ';
     if (!num1) {
         num1 = Number(num);
@@ -180,6 +191,9 @@ buttonMin.addEventListener('click', () => {
     operator = '-';
 })
 buttonMulti.addEventListener('click', () => {
+    if (!num) {
+        return;
+    }
     calculatorDisplay.textContent += ' * ';
     if (!num1) {
         num1 = Number(num);
@@ -192,6 +206,9 @@ buttonMulti.addEventListener('click', () => {
     operator = '*';
 })
 buttonDiv.addEventListener('click', () => {
+    if (!num) {
+        return;
+    }
     calculatorDisplay.textContent += ' / ';
     if (!num1) {
         num1 = Number(num);
@@ -204,6 +221,9 @@ buttonDiv.addEventListener('click', () => {
     operator = '/';
 })
 buttonEqal.addEventListener('click', () => {
+    if (!num) {
+        return;
+    }
     if (!num1) {
         num1 = Number(num);
         num = '';
@@ -215,6 +235,9 @@ buttonEqal.addEventListener('click', () => {
     calculatorDisplay.textContent = num1;
 })
 buttonPercent.addEventListener('click', () => {
+    if (!num) {
+        return;
+    }
     calculatorDisplay.textContent += '%';
     if (!num1) {
         num1 = Number(num);
