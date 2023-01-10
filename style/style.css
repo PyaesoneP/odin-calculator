@@ -138,10 +138,30 @@ a {
 footer {
     background-color: rgb(65, 65, 65);
     color: #e5e7eb;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin-top: 100px;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.projectheader {
+    text-align: center;
+    margin-bottom: 0px;
+    font-weight: bolder;
+}
+
+.projectlist {
+    display: flex;
+    flex-direction: column;
 }
 
 footer > p {
